@@ -1,0 +1,27 @@
+.chatroom_container {
+    top: 19px;
+    width: 700px;
+    height: calc(100% - 38px);
+    background-image: url(./background_img.png);
+}
+
+.chat-room-container {
+    height: 100%;
+
+}
+
+.chat-room-container .messages-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.my-message{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.received-message{
+    display: flex;
+    justify-content: flex-start;
+}

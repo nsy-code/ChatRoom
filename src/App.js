@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Home from "./components/Home";
+import ChatRoom from "./components/ChatRoom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [roomName, setRoomName] = React.useState("");
+    const [userName, setUserName] = React.useState("");
+    const [isJoin, setIsJoin] = React.useState(false);
+
+    useEffect(() => {
+        if (!("Notification" in window)) {
+            console.log("This browser does not support desktop notification");
+        } else {
+            Notification.requestPermission();
+        }
+    });
+    
+    return (
+        <React.Fragment>
+            {isJoin ? (
+                <ChatRoom roomId={roomName} userName={userName} />
+            ) : (
+                <Home
+                    roomName={roomName}
+                    setRoomName={setRoomName}
+                    userName={userName}
+                    setUserName={setUserName}
+                    isJoin={isJoin}
+                    setIsJoin={setIsJoin}
+                />
+            )}
+        </React.Fragment>
+    );
 }
 
 export default App;
