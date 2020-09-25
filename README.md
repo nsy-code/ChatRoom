@@ -14,4 +14,4 @@
 
 #### Notication 
 
-<img src="https://github.com/SY-NG/ChatRoom/blob/master/doc/web_notification_flow.png" />
+<img src="./doc/web_notification_flow.png" />
