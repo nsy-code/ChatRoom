@@ -11,6 +11,9 @@
 ## Description
 
 The app is to let a user create a chat room and communicate with other users within the same room. There is also web notification pop-up when other users sending messages.
+<br>
+<img src="./doc/demo.gif" />
+
 
 <a name="technologies"></a>
 
